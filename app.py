@@ -19,8 +19,7 @@ if st.button("Analyze", key="analyze_button"):
                 st.error("Invalid file type. Please upload a PDF file.")
                 st.stop()
             
-            # Check file size
-            if uploaded_file.size > 200 * 1024 * 1024:  # 200MB limit
+            if uploaded_file.size > 200 * 1024 * 1024:  
                 st.error("File too large. Maximum size is 200MB.")
                 st.stop()
                 
@@ -35,16 +34,14 @@ if st.button("Analyze", key="analyze_button"):
                     error_msg = upload_response.json().get('error', 'Unknown error occurred')
                     st.error(f"Upload failed: {error_msg}")
                     st.stop()
-            
-            # ============= ANALYSIS SECTION =============
+        
             with st.spinner("Analyzing content..."):
                 # Get analysis from backend
                 analysis_response = requests.get(f"{BACKEND_URL}/analyze")
                 
                 if analysis_response.status_code == 200:
                     analysis = analysis_response.json()
-                    
-                    # Display results in expandable sections
+                    #results
                     st.success("Analysis complete!")
                     
                     with st.expander("📌 Business Summary", expanded=True):
@@ -52,8 +49,7 @@ if st.button("Analyze", key="analyze_button"):
                     
                     with st.expander("👥 Team Analysis", expanded=True):
                         st.write(analysis.get("team_analysis", "No team information found"))
-                    
-                    # Optional: Add download button
+    
                     st.download_button(
                         label="Download Analysis",
                         data=str(analysis),
@@ -63,7 +59,6 @@ if st.button("Analyze", key="analyze_button"):
                 else:
                     error_msg = analysis_response.json().get('error', 'Analysis failed')
                     st.error(f"Analysis error: {error_msg}")
-            # ============= END ANALYSIS SECTION =============
             
         except requests.exceptions.ConnectionError:
             st.error("Backend service unavailable. Please ensure the Flask server is running.")
