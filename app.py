@@ -1,10 +1,11 @@
 import streamlit as st
 import requests
 import time
-import os
 
 # Configuration
-BACKEND_URL = "http://localhost:5000"
+BACKEND_URL = st.secrets["BACKEND_URL"]
+
+# BACKEND_URL = "http://localhost:5000" locally testing
 
 st.set_page_config(page_title="Pitch Deck Analyst", layout="wide")
 st.title("🚀 Pitch Deck Analyst")
