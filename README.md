@@ -19,8 +19,7 @@ This tool extracts a business summary and team analysis from uploaded PDF pitch 
 ## 🖼️ How it looks like!
 
 <!-- Add your screenshots here -->
-![Screenshot 1]()
-![Screenshot 2]()
+![Analysis op](![image](https://github.com/user-attachments/assets/e7f755b4-7b0c-404d-8693-1daaff65cd53))
 
 ---
 
