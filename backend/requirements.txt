@@ -5,3 +5,4 @@ langchain-google-genai
 pypdf
 python-dotenv
 google-generativeai
+langchain-community
