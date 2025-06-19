@@ -16,6 +16,10 @@ def allowed_file(filename):
 
 current_collection = None
 
+@app.route("/")
+def home():
+    return jsonify({"status": "OK", "message": "Flask backend is running"})
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     global current_collection
