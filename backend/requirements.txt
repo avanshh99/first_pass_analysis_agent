@@ -1,0 +1,7 @@
+flask
+chromadb
+langchain
+langchain-google-genai
+pypdf
+python-dotenv
+google-generativeai
