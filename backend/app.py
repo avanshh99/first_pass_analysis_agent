@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from rag_utils import process_pdf
 from agents import analyze_pitch_deck
 import os
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+CORS(app)
 
-# 
 # Allowed extensions
 ALLOWED_EXTENSIONS = {'pdf'}
 
