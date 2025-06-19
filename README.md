@@ -45,8 +45,8 @@ This tool extracts a business summary and team analysis from uploaded PDF pitch 
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/avanshh99/irst_pass_analysis_agent.git
-   cd irst_pass_analysis_agent
+   git clone https://github.com/<-your username->/irst_pass_analysis_agent.git
+   cd first_pass_analysis_agent
    ```
 
 2. **Backend Setup:**
